@@ -1,0 +1,62 @@
+{% extends "layout.html.j2" %}
+
+{% block title %} Example {% endblock %}
+
+{% block body %}
+<p>This is the route</p>
+{{ route_n|safe }}
+
+</br>
+<p>These are the ones you will visit</p>
+
+<p>It will take  hours (less than  hours available).
+<br>
+It will cost  usd (less than  available).
+</p>
+
+<body>
+    <h3>The map:</h3>
+    <!--The div element for the map -->
+    <div id="map" style="width: 400px; height: 400px;">
+                 <div id="map-canvas"></div>
+     </div>
+
+  
+  <script>
+// Initialize and add the map
+function initMap() {
+  // The location of Oxford
+  var uluru = {lat: 51.752022, lng: -1.257677};
+
+  // The map, centered at Oxford
+  var map = new google.maps.Map(
+      document.getElementById('map'), {zoom: 13, center: uluru});
+}
+    </script>
+    <!--Load the API from the specified URL
+    * The async attribute allows the browser to render the page while the API loads
+    * The key parameter will contain your own API key (which is not needed for this tutorial)
+    * The callback parameter executes the initMap() function
+    -->
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBdPAkzHMWahHjT9ml9zGeM6pR3u-VucKc&callback=initMap">
+    </script>
+<br>
+</br>
+    <h3>The graph:</h3>
+<p>Here's a display of the Iris sample dataset from Bokeh's sample data.</p>
+<link href="http://cdn.pydata.org/bokeh/release/bokeh-{{ bkversion }}.min.css" rel="stylesheet" type="text/css">
+<link href="http://cdn.pydata.org/bokeh/release/bokeh-widgets-{{ bkversion }}.min.css" rel="stylesheet" type="text/css">
+
+<script src="http://cdn.pydata.org/bokeh/release/bokeh-{{ bkversion }}.min.js"></script>
+<script src="http://cdn.pydata.org/bokeh/release/bokeh-widgets-{{ bkversion }}.min.js"></script>
+
+{{ fig_script|indent(4)|safe }}
+{{ fig_div|safe }}
+
+
+<p>
+</p>
+</body>
+
+{% endblock %}

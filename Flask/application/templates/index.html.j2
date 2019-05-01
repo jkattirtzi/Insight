@@ -1,0 +1,40 @@
+{% extends "layout.html.j2" %}
+
+{% block title %} PowerForward {% endblock %}
+
+{% block body %}
+
+      <header class=" jumbotron jumbotron-fluid my-0 p-4">
+        <h2 class="strong">PowerForward<span class="small text-muted"> </span></h2><hr class="my-4">
+        <p class="lead">Getting Your Car Up That Hill</p>
+      </header>
+
+
+</br>
+
+<p>Welcome to PowerForward.
+A time series model has been trained on the first half of 5 routes. 
+Select the route below and we will predict the power used at each point along the route. 
+</p>
+
+              <form action="{{ url_for('option') }}" method="GET" role="form">
+                <label class="mt-4" for="route_n">Choose your route:</label>
+
+              <select class="form-control custom-select" name="route_n" id="route_n">
+                  <option selected value="Route 1">Route 1</option>
+                  <option value="Route 2">Route 2</option>
+                  <option value="Route 3">Route 3</option>
+                  <option value="Route 4">Route 4</option>
+                  <option value="Route 5">Route 5</option>
+              </select>
+ 	<button type="submit" class="mt-4 mb-1 btn btn-success">GO </button>
+
+
+ </form>
+
+</br>
+</br>
+
+
+
+{% endblock %}
