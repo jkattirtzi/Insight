@@ -10,6 +10,8 @@ You can find the web app here: http://jkattirtzi.tk/
 In this repository I include 2 example files that show the types of algorithms that I used. 
 
 Clean_data.ipynb - This Jupyter Notebook shows how I detect anomalies by using the time derivative and I remove extreme values
+
+
 VAR.ipynb - This Jupyter Notebook implements Time Series predictions using Variable Autoreggresive algorithms. It is a very simplified version. 
 As such the accuracy shown here is much lower than that of the final code. 
 
